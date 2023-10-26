@@ -1,16 +1,21 @@
-import { server } from "./server.js";
-import { createClient } from "@libsql/client/";
+import server from "./socket.js";
+import { initDB, getClient as client } from "./db.js";
+import dotenv from "dotenv";
+dotenv.config()
 
 const PORT = process.env.PORT ?? 3000;
 
-export const client = createClient({
-  authToken: process.env.TURSO_TOKEN,
-  url: process.env.TURSO_URL
-});
-
 const Start = async () => {
-  await client.sync();
-  server.listen(PORT, () => console.log(`server listen on port: ${PORT}`));
+  try {
+    /* inicializamos la db */
+    await initDB();
+
+    /* iniciamos el servidor */
+    server.listen(PORT, () => console.log(`server listen on port: ${PORT}`));
+  } catch (err) {
+    console.error("Error al iniciar servidor:", err.stack);
+    // process.exit(1);
+  }
 }
 
 Start();

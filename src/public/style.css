@@ -1,0 +1,71 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  color-scheme: dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  list-style: none;
+  text-decoration-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  box-sizing: border-box;
+  height: 100vh;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.message-list {
+  display: block;
+  align-items: center;
+  margin: auto;
+  border: 1px solid gray;
+  border-radius: 6px;
+  width: 400px;
+  height: 450px;
+  max-height: 450px;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.message-list::-webkit-scrollbar {
+  width: 5px;
+}
+.message-list::-webkit-scrollbar-track {
+  background: #312e2e;
+  border-radius: 6px;
+}
+.message-list::-webkit-scrollbar-thumb {
+  background-color: #bb2d2d;
+  border-radius: 6px;
+}
+
+.msg {
+  border: 1px solid gray;
+  border-radius: 6px;
+  margin: 10px auto 10px auto;
+  width: 200px;
+  height: 20px;
+  padding: 10px;
+  text-align: center;
+}
+
+.user-input {
+  display: flex;
+  padding: 10px;
+  margin: 10px auto;
+  outline: none;
+  border: 1px solid gray;
+  border-radius: 6px;
+}
