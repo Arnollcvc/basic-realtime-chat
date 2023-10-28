@@ -38,7 +38,7 @@ async function prevMsgs(socket) {
   try {
     let data = await client().execute(`SELECT * FROM Message`);
     if (data.row <= 0) return; 
-    socket.emit("loadPrev", data.row);
+    socket.emit("loadPrev", data.rows);
   } catch (err) {
     console.error(err.stack);
   }
